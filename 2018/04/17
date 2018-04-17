@@ -1,0 +1,15 @@
+        Select feedbackTypeList = new Select(webDriver.findElement(By.id("feedbackType")));
+        Select productTypeList = new Select(webDriver.findElement(By.id("productType")));
+        Select isAgentList = new Select(webDriver.findElement(By.id("isAgent")));
+        Select resultList = new Select(webDriver.findElement(By.id("result")));
+        Select stateList = new Select(webDriver.findElement(By.id("state")));
+//        System.out.print(resultList);
+//        List<WebElement>  webElements= resultList.getOptions();
+        List<String> text = new ArrayList<String>();
+
+         for (WebElement webElement:resultList.getOptions()) {
+             System.out.print( webElement.getText()+",");
+             text.add(webElement.getText());
+         }
+         
+         获取所有的select，并且拿到option
