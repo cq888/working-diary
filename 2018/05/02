@@ -1,0 +1,36 @@
+###本地代码提交到github的仓库
+
+
+将本地文件上传到github仓库
+步骤：
+1.第一次使用git需要设置用户名和邮箱
+git config --global user.name <用户名>
+git config --global user.email <邮箱>
+2.创建本地文件目录并进行初始化
+mkdir gitRespository 
+cd gitRespository 
+git init
+3.添加文件到该目录下
+4.提交文件到暂存区
+git add <文件>
+5将暂存区的内容提交到分支上
+git commit -m <文件>
+
+ 6.生成ssh秘钥
+   ssh-keygen -t rsa -C "email.com" email.com是自己的git邮箱，一路回车下去
+   .ssh文件在主文件下，有三个文件id_rsa ,id_rsa.pub ,known_hosts.
+
+GitHub的操作：
+7.在github 主页点击右下角一个绿色按钮new repository或者右上角一个“+”按钮选择new repository 创建一个repository。
+
+8.创建repository完之后需要建一个密钥，右上角一个紫色图标，选择Settings , 进入Settings界面后，左边选择SSH and GPG keys, 点击 new SSH key, title自己定义，下面的key 填入 1中id_rsa.pub文件中的内容。然后add 即可
+本地git：
+9、输入ssh -T git@github.com
+
+10.上传数据，把数据上传到远程库
+    	 git remote add origin <github的仓库地址>
+  git push -u origin master 
+
+备注：第一次上传数据 git push -u origin master，以后上传数据 git remote origin master。
+
+
